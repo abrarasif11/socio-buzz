@@ -8,6 +8,7 @@ import About from './component/About/About';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 import { Toaster } from 'react-hot-toast';
+import Loader from './component/Loader/Loader';
 
 function App() {
   const router = createBrowserRouter([
@@ -44,7 +45,7 @@ function App() {
   ])
   return (
     <div className="App">
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider fallbackElement={<Loader></Loader>} router={router}></RouterProvider>
       <Toaster></Toaster>
     </div>
   );
