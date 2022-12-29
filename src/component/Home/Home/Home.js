@@ -9,6 +9,7 @@ const Home = () => {
         event.preventDefault();
         const form = event.target;
         const write = form.write.value;
+        const name = form.name.value;
         console.log(img);
         // imgbb
         const formData = new FormData();
@@ -25,6 +26,7 @@ const Home = () => {
                     const picture = imgData.data.url
                     const uploadPhoto = {
                         write: write,
+                        name: name,
                         picture: picture,
                     };
                     console.log(uploadPhoto);
@@ -51,7 +53,7 @@ const Home = () => {
                     <span className="label-text font-poppins mx-auto text-lg text-black">User Name</span>
                 </label>
                 <div className="form-control text-black font-poppins">
-                    <input type="text" placeholder="Type here" className="  mx-auto  input input-bordered input-primary w-full max-w-xs" />
+                    <input defaultValue={user?.displayName} type="text" name='name' placeholder="Type here" className="  mx-auto  input input-bordered input-primary w-full max-w-xs" />
                     <label className="label">
                         <span className="label-text mx-auto text-lg text-black">Wants to write something?</span>
                     </label>
