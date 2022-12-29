@@ -21,14 +21,14 @@ const Header = () => {
                     <img className='w-[150px]' src={title} alt="" />
                 </Link>
                 <ul class="flex items-center hidden space-x-8 lg:flex">
-                    <li>
+                    {/* <li>
                         <Link
                             to="/"
                             class="font-medium tracking-wide  text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                             Home
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link
                             to="/media"
