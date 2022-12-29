@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
-import LeftSideBar from '../../LeftSideBar/LeftSideBar';
 const Home = () => {
     const [img, setImg] = useState(null)
     const imageInput = (e) => {
@@ -17,7 +16,7 @@ const Home = () => {
         // imgbb
         const formData = new FormData();
         formData.append('image', picture);
-        const url = "https://api.imgbb.com/1/upload?key=1e913f26aed6d05edc8dc43e8482837d"
+        const url = "https://api.imgbb.com/1/upload?key=d67dcefac912583f6436d9ad33d0ca25"
         fetch(url, {
             method: 'POST',
             body: formData
@@ -48,9 +47,9 @@ const Home = () => {
     }
     return (
         <div>
-            
+
             <form onSubmit={handlePostSubmit}>
-            <LeftSideBar></LeftSideBar>
+
                 <div className="form-control text-black font-poppins">
                     <label className="label">
                         <span className="label-text mx-auto text-lg text-black">Wants to write something?</span>
@@ -61,7 +60,6 @@ const Home = () => {
                 </div>
             </form>
         </div>
-
     );
 };
 
