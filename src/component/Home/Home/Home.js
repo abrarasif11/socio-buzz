@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import LeftSideBar from '../../LeftSideBar/LeftSideBar';
 const Home = () => {
     const [img, setImg] = useState(null)
     const imageInput = (e) => {
@@ -46,16 +47,21 @@ const Home = () => {
             })
     }
     return (
-        <form onSubmit={handlePostSubmit}>
-            <div className="form-control text-black font-poppins">
-                <label className="label">
-                    <span className="label-text mx-auto text-lg text-black">Wants to write something?</span>
-                </label>
-                <textarea name='write' id='write' className="text-black textarea  textarea-primary w-1/2 mx-auto h-1/2" placeholder="Write Here"></textarea>
-                <input onClick={imageInput} id='photo' type="file" name='photo' className="file-input mx-auto mt-7 file-input-bordered file-input-primary w-full max-w-xs" />
-                <button className='btn btn-primary text-black w-1/2 mx-auto mt-7'>Submit</button>
-            </div>
-        </form>
+        <div>
+            
+            <form onSubmit={handlePostSubmit}>
+            <LeftSideBar></LeftSideBar>
+                <div className="form-control text-black font-poppins">
+                    <label className="label">
+                        <span className="label-text mx-auto text-lg text-black">Wants to write something?</span>
+                    </label>
+                    <textarea name='write' id='write' className="text-black textarea  textarea-primary w-1/2 mx-auto h-1/2" placeholder="Write Here"></textarea>
+                    <input onClick={imageInput} id='photo' type="file" name='photo' className="file-input mx-auto mt-7 file-input-bordered file-input-primary w-full max-w-xs" />
+                    <button className='btn btn-primary text-black w-1/2 mx-auto mt-7'>Submit</button>
+                </div>
+            </form>
+        </div>
+
     );
 };
 
