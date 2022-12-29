@@ -1,21 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import LeftSideBar from '../../LeftSideBar/LeftSideBar';
 const Home = () => {
     const [img, setImg] = useState(null)
-    const imageInput = (e) => {
-        const file = e.target.files[0]
-        setImg(file)
-    }
     const { user } = useContext(AuthContext)
     const handlePostSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const write = form.write.value;
-        const picture = img;
+        console.log(img);
         // imgbb
         const formData = new FormData();
-        formData.append('image', picture);
+        formData.append('image', img);
         const url = "https://api.imgbb.com/1/upload?key=d67dcefac912583f6436d9ad33d0ca25"
         fetch(url, {
             method: 'POST',
@@ -23,6 +20,7 @@ const Home = () => {
         })
             .then(res => res.json())
             .then(imgData => {
+                console.log(imgData);
                 if (imgData.success) {
                     const picture = imgData.data.url
                     const uploadPhoto = {
@@ -47,16 +45,19 @@ const Home = () => {
     }
     return (
         <div>
-
+            <LeftSideBar></LeftSideBar>
             <form onSubmit={handlePostSubmit}>
-
+                <label className="label">
+                    <span className="label-text font-poppins mx-auto text-lg text-black">User Name</span>
+                </label>
                 <div className="form-control text-black font-poppins">
+                    <input type="text" placeholder="Type here" className="  mx-auto  input input-bordered input-primary w-full max-w-xs" />
                     <label className="label">
                         <span className="label-text mx-auto text-lg text-black">Wants to write something?</span>
                     </label>
-                    <textarea name='write' id='write' className="text-black textarea  textarea-primary w-1/2 mx-auto h-1/2" placeholder="Write Here"></textarea>
-                    <input onClick={imageInput} id='photo' type="file" name='photo' className="file-input mx-auto mt-7 file-input-bordered file-input-primary w-full max-w-xs" />
-                    <button className='btn btn-primary text-black w-1/2 mx-auto mt-7'>Submit</button>
+                    <textarea name='write' id='write' className="text-black textarea  textarea-primary w-[320px] mx-auto h-1/2" placeholder="Write Here"></textarea>
+                    <input onChange={(e) => setImg(e.target.files[0])} id='photo' type="file" name='photo' className="file-input mx-auto mt-7 file-input-bordered file-input-primary w-full max-w-xs" />
+                    <button className='btn btn-primary text-black w-[320px] mb-20 mx-auto mt-7'>Submit</button>
                 </div>
             </form>
         </div>
