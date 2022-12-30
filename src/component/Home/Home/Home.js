@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import LeftSideBar from '../../LeftSideBar/LeftSideBar';
+import RightSideNav from '../../RightSideNav/RightSideNav';
 const Home = () => {
     const [img, setImg] = useState(null)
     const { user } = useContext(AuthContext)
@@ -62,6 +63,7 @@ const Home = () => {
                     <button className='btn btn-primary text-black w-[320px] mb-20 mx-auto mt-7'>Submit</button>
                 </div>
             </form>
+            <RightSideNav></RightSideNav>
         </div>
     );
 };

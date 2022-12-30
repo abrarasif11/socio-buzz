@@ -6,10 +6,10 @@ const ShowMedia = ({ media }) => {
     const { write, picture } = media;
     console.log(media);
     return (
-        <div className="max-w-lg p-4 font-poppins mx-auto mb-10 mt-20 shadow-md dark:bg-gray-900 dark:text-gray-100">
+        <div className="max-w-lg p-4 font-poppins mx-auto mb-10 mt-20 shadow-md bg-blue-500 dark:text-gray-100 ">
             <div className="flex justify-between pb-4 border-bottom">
                 <div className="flex items-center">
-                    <a rel="noopener noreferrer" href="#" className="mb-0 capitalize text-lg font-lg text-black">{user?.displayName}</a>
+                    <Link  to="/about" className="mb-0 capitalize text-lg font-lg text-black">{user?.displayName}</Link>
                 </div>
             </div>
             <div className="space-y-2">

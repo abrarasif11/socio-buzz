@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftSideBar = () => {
     return (
-        <div className='mb-10'>
+        <div className='mb-10 font-poppins'>
             <div className="card flex w-[200px] mt-10 ml-3  bg-blue-500 text-neutral-content">
                 <div className="avatar">
                     <div className="w-[80px] mx-auto  mt-5 rounded-full">
