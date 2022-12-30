@@ -5,7 +5,7 @@ import ShowMedia from './ShowMedia';
 const Media = () => {
     const [medias,setMedias] = useState([])
     useEffect(() =>{
-        fetch('http://localhost:5000/post')
+        fetch('https://socio-buzz-server.vercel.app/post')
         .then(res => res.json())
         .then(data => setMedias(data))
     },[])

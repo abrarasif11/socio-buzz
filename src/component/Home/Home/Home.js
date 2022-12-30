@@ -31,7 +31,7 @@ const Home = () => {
                         picture: picture,
                     };
                     console.log(uploadPhoto);
-                    fetch('http://localhost:5000/post', {
+                    fetch('https://socio-buzz-server.vercel.app/post', {
                         method: 'POST',
                         headers: {
                             "content-type": "application/json",
