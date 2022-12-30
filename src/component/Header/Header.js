@@ -11,7 +11,7 @@ const Header = () => {
             .catch(err => console.log(err));
     }
     return (
-        <div class="px-4 py-5 font-poppins bg-black mx-auto sm:max-w-xl md:max-w-full lg:w-full md:px-24 lg:px-8">
+        <div class="px-4 z-index-0 py-5 font-poppins bg-black mx-auto sm:max-w-xl md:max-w-full lg:w-full md:px-24 lg:px-8">
             <div class="relative flex items-center justify-between">
                 <Link
                     to="/"
@@ -76,7 +76,7 @@ const Header = () => {
                             </Link>
                     }
                 </ul>
-                <div class="lg:hidden">
+                <div class="lg:hidden z-index-0">
                     <button
                         aria-label="Open Menu"
                         title="Open Menu"

@@ -4,6 +4,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import LeftSideBar from '../../LeftSideBar/LeftSideBar';
 import RightSideNav from '../../RightSideNav/RightSideNav';
 const Home = () => {
+    const imagebbkey = process.env.REACT_APP_imagebb_key
     const [img, setImg] = useState(null)
     const { user } = useContext(AuthContext)
     const handlePostSubmit = event => {
@@ -15,7 +16,7 @@ const Home = () => {
         // imgbb
         const formData = new FormData();
         formData.append('image', img);
-        const url = "https://api.imgbb.com/1/upload?key=d67dcefac912583f6436d9ad33d0ca25"
+        const url = `https://api.imgbb.com/1/upload?key=${imagebbkey}`
         fetch(url, {
             method: 'POST',
             body: formData

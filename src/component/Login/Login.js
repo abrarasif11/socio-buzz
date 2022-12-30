@@ -37,7 +37,7 @@ const Login = () => {
             });
     };
     return (
-        <div class="w-full font-poppins max-w-sm p-6 m-auto mx-auto mt-20 mb-20 bg-blue-400 rounded-lg shadow-md dark:bg-gray-800">
+        <div class="w-full  font-poppins max-w-sm p-6 m-auto mx-auto mt-20 mb-20 bg-blue-400 rounded-lg shadow-md dark:bg-gray-800">
             <h1 class="text-3xl font-semibold text-center text-black">Login Here</h1>
 
             <form onSubmit={handleSubmit} class="mt-6">

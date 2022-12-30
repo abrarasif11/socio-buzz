@@ -16,32 +16,32 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
-      children : [
+      children: [
         {
-          path : '/',
-          element : <PrivateRoute><Home></Home></PrivateRoute>
+          path: '/',
+          element: <PrivateRoute><Home></Home></PrivateRoute>
         },
         {
-          path : '/media',
-          element : <PrivateRoute><Media></Media></PrivateRoute>
+          path: '/media',
+          element: <PrivateRoute><Media></Media></PrivateRoute>
         },
         {
-          path : '/message',
-          element : <PrivateRoute><Message></Message></PrivateRoute>
+          path: '/message',
+          element: <PrivateRoute><Message></Message></PrivateRoute>
         },
         {
-          path : '/about',
-          element : <PrivateRoute> <About></About></PrivateRoute>
+          path: '/about',
+          element: <PrivateRoute> <About></About></PrivateRoute>
         },
         {
-          path : '/login',
-          element : <Login></Login>
+          path: '/login',
+          element: <Login></Login>
         },
         {
-          path : '/register',
-          element : <Register></Register>
+          path: '/register',
+          element: <Register></Register>
         },
-      ] 
+      ]
     }
   ])
   return (
