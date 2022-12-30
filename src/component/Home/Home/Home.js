@@ -46,9 +46,9 @@ const Home = () => {
             })
     }
     return (
-        <div>
+        <div className='grid lg:grid-cols-3 sm:grid-cols-2 '>
             <LeftSideBar></LeftSideBar>
-            <form onSubmit={handlePostSubmit}>
+            <form className='' onSubmit={handlePostSubmit}>
                 <label className="label">
                     <span className="label-text font-poppins mx-auto text-lg text-black">User Name</span>
                 </label>
